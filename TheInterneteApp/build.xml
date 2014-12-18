@@ -1,0 +1,59 @@
+<project name="automation" default="run" basedir=".">
+
+	<!-- START USER SPECIFIC PROPERTIES. Edit these before you run the tests -->
+	<property name="iedriver_path" value="./lib/IEDriverServer.exe"/>
+	<property name="chromedriver_path" value="./lib/chromedriver.exe"/>
+	<!-- END USER SPECIFIC PROPERTIES. DO NOT edit below this line unless you know what you are doing. -->
+
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="lib" location="lib"/>
+
+
+	<!-- get class path, used for build -->
+	<property name="lib.dir" value="lib"/>
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+		<pathelement location="build"/>
+	</path>
+
+	<!-- create build folder, testng_output folder and remove old log file -->
+	<target name="init">
+		<delete dir="build"/>
+		<delete dir="testng_output"/>
+		<delete file="Test_Auto.log"/>
+		<mkdir dir="${build}"/>
+	</target>
+
+	<!-- build all java file to class binary -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build}" classpathref="classpath" includeantruntime="false"/>
+	</target>
+
+	<!-- Config for testng -->
+	<taskdef name="testng" classname="org.testng.TestNGAntTask">
+		<classpath>
+			<pathelement location="./lib/testng-6.8.5.jar"/>
+		</classpath>
+	</taskdef>
+	<property name="testng.output.dir" value="testng_output"/>
+
+	<!-- execute testng after compile, then generate report -->
+	<target name ="run" depends="compile">
+		<mkdir dir="${testng.output.dir}"/>
+
+		<!-- config testng -->
+		<testng outputdir="${testng.output.dir}" classpathref="classpath">
+			<sysproperty key="webdriver.chrome.driver" value="${chromedriver_path}"/>
+			<sysproperty key="webdriver.ie.driver" value="${iedriver_path}"/>
+			<sysproperty key="browser" value="${browser}"/>
+
+			<!-- execute testcase -->
+
+			<xmlfileset dir="." includes="testng.xml"/>
+
+		</testng>
+	</target>
+
+
+</project>

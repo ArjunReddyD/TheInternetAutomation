@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [The Internet Suite]">
+  <test name="Next 4 Tests(failed)">
+    <classes>
+      <class name="the.internet.app.TheInternetTests">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="setTestSuite"/>
+        </methods>
+      </class> <!-- the.internet.app.TheInternetTests -->
+      <class name="the.internet.app.NextStepMove">
+        <methods>
+          <include name="setTestSuite"/>
+          <include name="contextMenuSelection"/>
+        </methods>
+      </class> <!-- the.internet.app.NextStepMove -->
+    </classes>
+  </test> <!-- Next 4 Tests(failed) -->
+</suite> <!-- Failed suite [The Internet Suite] -->

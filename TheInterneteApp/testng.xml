@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="The Internet Suite">
+
+	<test name="Next 4 Tests">
+		<classes>
+			<class name="the.internet.app.TheInternateBase"/>
+<!-- 			<class name="the.internet.app.TheInternetTests"/> -->
+			<class name="the.internet.app.NextStepMove"/>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
