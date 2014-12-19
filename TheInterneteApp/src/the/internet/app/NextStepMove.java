@@ -45,6 +45,7 @@ public class NextStepMove extends TheInternateBase {
   @Test(priority = 4)
   private void changingDom() throws InterruptedException {
     landOnTestpage(5);
+    System.out.println("changin dome");
     List<WebElement> cssEle = driver.findElements(By
         .cssSelector("input[type='checkbox']"));
     for (WebElement ele : cssEle) {
@@ -58,6 +59,7 @@ public class NextStepMove extends TheInternateBase {
   @Test(priority = 5)
   private void contextMenuSelection() {
     landOnTestpage(6);
+    System.out.println("context menu selected");
     WebElement contextMenu = driver.findElement(By.id("hot-spot"));
     Actions action = new Actions(driver);
     action.contextClick(contextMenu).sendKeys(Keys.ARROW_DOWN)
@@ -75,6 +77,7 @@ public class NextStepMove extends TheInternateBase {
   @Test(priority = 6)
   private void dragNDrop() {
     landOnTestpage(8);
+    System.out.println("drag n drop");
     Actions builder = new Actions(driver);
 
     builder.clickAndHold(driver.findElement(colunmA));
@@ -93,6 +96,7 @@ public class NextStepMove extends TheInternateBase {
   @Test(priority = 7)
   private void dropDownOption() {
     landOnTestpage(9);
+    System.out.println("drop down");
     org.openqa.selenium.support.ui.Select dropDown = new org.openqa.selenium.support.ui.Select(
         driver.findElement(dropdown));
     dropDown.selectByVisibleText("Option 1");
