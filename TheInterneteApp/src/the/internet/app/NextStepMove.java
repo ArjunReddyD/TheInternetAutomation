@@ -69,6 +69,7 @@ public class NextStepMove extends TheInternateBase {
     // Get the text of the alert or prompt
     System.out.println(alert.getText());
     // And acknowledge the alert (equivalent to clicking "OK")
+	// Just random line to commit on git
     alert.accept();
   }
 
