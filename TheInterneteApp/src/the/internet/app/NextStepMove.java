@@ -69,13 +69,12 @@ public class NextStepMove extends TheInternateBase {
     // Get the text of the alert or prompt
     System.out.println(alert.getText());
     // And acknowledge the alert (equivalent to clicking "OK")
-	// Just random line to commit on git
     alert.accept();
   }
 
   @Test(priority = 6)
   private void dragNDrop() {
-    landOnTestpage(7);
+    landOnTestpage(8);
     Actions builder = new Actions(driver);
 
     builder.clickAndHold(driver.findElement(colunmA));
@@ -92,7 +91,7 @@ public class NextStepMove extends TheInternateBase {
 
   @Test(priority = 7)
   private void dropDownOption() {
-    landOnTestpage(8);
+    landOnTestpage(9);
     org.openqa.selenium.support.ui.Select dropDown = new org.openqa.selenium.support.ui.Select(
         driver.findElement(dropdown));
     dropDown.selectByVisibleText("Option 1");
@@ -101,7 +100,7 @@ public class NextStepMove extends TheInternateBase {
 
   @Test(priority = 8)
   private void dynamicContent() {
-    landOnTestpage(9);
+    landOnTestpage(10);
     List<WebElement> dynamicContent = driver.findElements(dynamicContentPath);
     for (WebElement webElement : dynamicContent) {
       System.out.println("\n" + webElement.getText() + "\n");
@@ -110,7 +109,7 @@ public class NextStepMove extends TheInternateBase {
 
   @Test(priority = 9)
   private void dynamicContentLoad() {
-    landOnTestpage(10);
+    landOnTestpage(11);
     driver.findElement(exm1).click();
     driver.findElement(startBtn).click();
     WebElement wait1 = (new WebDriverWait(driver, 40).until(ExpectedConditions
