@@ -82,6 +82,7 @@ public class NextStepMove extends TheInternateBase {
     builder.perform();
     builder.release(driver.findElement(colunmB));
     builder.perform();
+    builder.click();
     // (new Actions(driver)).dragAndDrop(driver.findElement(colunmA),
     // driver.findElement(colunmB)).perform();
 
@@ -107,19 +108,19 @@ public class NextStepMove extends TheInternateBase {
     }
   }
 
-  @Test(priority = 9)
-  private void dynamicContentLoad() {
-    landOnTestpage(11);
-    driver.findElement(exm1).click();
-    driver.findElement(startBtn).click();
-    WebElement wait1 = (new WebDriverWait(driver, 40).until(ExpectedConditions
-        .visibilityOf(driver.findElement(By.xpath(".//*[@id='finish']/h4")))));
-    System.out.println(wait1.getText());
-    driver.navigate().back();
-    driver.findElement(startBtn).click();
-    driver.findElement(exm2).click();
-    WebElement wait2 = (new WebDriverWait(driver, 30).until(ExpectedConditions
-        .visibilityOfElementLocated(By.xpath(".//*[@id='finish']/h4"))));
-    System.out.println(wait2.getText());
-  }
+//  @Test(priority = 9,enabled=false)
+//  private void dynamicContentLoad() {
+//    landOnTestpage(11);
+//    driver.findElement(exm1).click();
+//    driver.findElement(startBtn).click();
+//    WebElement wait1 = (new WebDriverWait(driver, 40).until(ExpectedConditions
+//        .visibilityOf(driver.findElement(By.xpath(".//*[@id='finish']/h4")))));
+//    System.out.println(wait1.getText());
+//    driver.navigate().back();
+//    driver.findElement(startBtn).click();
+//    driver.findElement(exm2).click();
+//    WebElement wait2 = (new WebDriverWait(driver, 30).until(ExpectedConditions
+//        .visibilityOfElementLocated(By.xpath(".//*[@id='finish']/h4"))));
+//    System.out.println(wait2.getText());
+//  }
 }
