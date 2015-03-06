@@ -74,7 +74,7 @@ public class NextStepMove extends TheInternateBase {
     alert.accept();
   }
 
-  @Test(priority = 6)
+  @Test(priority = 6, enabled=false)
   private void dragNDrop() {
     landOnTestpage(8);
     System.out.println("drag n drop");
