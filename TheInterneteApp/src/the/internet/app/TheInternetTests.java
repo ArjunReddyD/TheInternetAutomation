@@ -35,6 +35,7 @@ public class TheInternetTests extends TheInternateBase {
     // for (String handle : driver.getWindowHandles()) {
     // driver.switchTo().window(handle);
     // }
+    
     // List<WebElement> elements = driver.findElements(By
     // .xpath(".//*[@id='content']/ul"));
     utility.isElementPresent(by, 120);
